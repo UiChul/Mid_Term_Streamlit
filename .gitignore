@@ -1,0 +1,8 @@
+myenv
+config.yaml
+user_data/users.json
+pokemon_data
+bgm
+**/__pycache__/
+*.py[cod]
+*$py.class
