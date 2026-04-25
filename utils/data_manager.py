@@ -4,6 +4,7 @@ import os
 
 DB_FILE = "user_data/users.json"
 
+
 def load_users():
     if not os.path.exists("user_data"):
         os.makedirs("user_data")
@@ -11,7 +12,6 @@ def load_users():
         with open(DB_FILE, "w", encoding="utf-8") as f:
             json.dump({}, f)
         return {}
-    
     with open(DB_FILE, "r", encoding="utf-8") as f:
         return json.load(f)
 
@@ -21,7 +21,7 @@ def save_user(user_id, user_info):
     with open(DB_FILE, "w", encoding="utf-8") as f:
         json.dump(users, f, indent=4, ensure_ascii=False)
         
-RANKING_FILE = "user_data/users.json"
+RANKING_FILE = "user_data/ranking.json"
 
 def get_rankings():
     """랭킹 데이터를 가져와서 점수 순으로 정렬하여 반환합니다."""

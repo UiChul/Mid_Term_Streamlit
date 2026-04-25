@@ -1,9 +1,11 @@
 import streamlit as st
 import sys, os
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
-
+from utils.audio_manager import play_bgm_from_folder
 from utils.auth import hash_pattern
 from utils.data_manager import load_users, save_user
+
+play_bgm_from_folder("basic_bgm")
 
 st.set_page_config(page_title="회원가입", page_icon="📝")
 st.title("📝 회원가입")

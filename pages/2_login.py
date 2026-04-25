@@ -1,9 +1,12 @@
 import streamlit as st
 import sys, os
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
+from utils.audio_manager import play_bgm_from_folder
+
 from utils.auth import hash_pattern
 from utils.data_manager import load_users
 
+play_bgm_from_folder("basic_bgm")
 st.set_page_config(page_title="로그인", page_icon="🔐")
 st.title("🔐 로그인")
 st.write("아이디 입력 후 설정하신 비밀번호를 클릭해 주세요.")
