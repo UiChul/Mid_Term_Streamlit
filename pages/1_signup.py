@@ -43,7 +43,7 @@ with col1:
 
 with col2:
     if st.button("✅ 회원가입 완료", type="primary"):
-        # 이름(new_name) 필수 입력 조건 추가
+        # 필수 조건
         if not new_name or not new_id or len(st.session_state['signup_code']) < 4:
             st.warning("이름과 아이디를 모두 입력하고 최소 4자리 이상의 비밀번호를 설정해 주세요.")
         else:
@@ -52,7 +52,7 @@ with col2:
                 st.error("이미 존재하는 아이디입니다. 다른 아이디를 사용해 주세요.")
             else:
                 user_data = {
-                    "name": new_name, # 이름 데이터 다시 저장
+                    "name": new_name, # 이름 데이터 저장
                     "password_hash": hash_pattern(st.session_state['signup_code'])
                 }
                 save_user(new_id, user_data)

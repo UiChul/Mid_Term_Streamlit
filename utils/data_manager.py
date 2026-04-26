@@ -30,7 +30,6 @@ def get_rankings():
     with open(RANKING_FILE, "r", encoding="utf-8") as f:
         try:
             rankings = json.load(f)
-            # 맞춘 갯수(count) 기준 내림차순 정렬
             return sorted(rankings, key=lambda x: x['count'], reverse=True)
         except:
             return []
